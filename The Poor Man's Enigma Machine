@@ -24,8 +24,8 @@ def encryptAlgorithm(message_input):
             key_log.append(integer_key)
             message_input[character_index] = all_characters[integer_key]
     ''.join(message_input)
-    print(message_input)
-    print(key_log)
+    print('Encrypted Message: ', ''.join(message_input))
+    print('Key -> ',key_log)
 
 
 initial_input = input('Enter your message here: ')
