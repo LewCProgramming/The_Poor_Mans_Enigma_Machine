@@ -1,0 +1,33 @@
+#Take string value as input
+#Encrypt w/ a key into code
+#Take string value of code as input
+#Decrypt w/ key into plain text
+
+import random
+import string
+
+letters = string.ascii_letters
+digits = string.digits
+special = string.punctuation
+all_characters = letters + digits + special
+all_characters = list(all_characters)
+
+def randomIntegerFunction():
+    random_integer = random.randint(0,93)
+    return random_integer
+
+def encryptAlgorithm(message_input):
+    if isinstance(message_input, list):
+        key_log = []
+        for character_index in range(len(message_input)):
+            integer_key = randomIntegerFunction()
+            key_log.append(integer_key)
+            message_input[character_index] = all_characters[integer_key]
+    ''.join(message_input)
+    print(message_input)
+    print(key_log)
+
+
+initial_input = input('Enter your message here: ')
+listInput = list(initial_input)
+encryptAlgorithm(listInput)
